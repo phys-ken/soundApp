@@ -87,7 +87,6 @@ vol2 = audioCtx2.createGain();
                 data2 = _data;
             },
             function(e) {
-                alert(e.err);
             }
         );
     };
@@ -109,7 +108,6 @@ vol3 = audioCtx3.createGain();
                 data3 = _data;
             },
             function(e) {
-                alert(e.err);
             }
         );
     };
@@ -130,7 +128,6 @@ vol4 = audioCtx4.createGain();
                 data4 = _data;
             },
             function(e) {
-                alert(e.err);
             }
         );
     };
