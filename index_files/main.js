@@ -68,6 +68,72 @@ analyser.fftSize =2048 //デフォルト2048;
 vol.connect(analyser);
 
 
+
+
+////音楽データ読み込む////////////////////////////////////////////////////////////////////////////////////
+audioCtx2 = new(window.webkitAudioContext || window.AudioContext)();
+vol2 = audioCtx2.createGain();
+
+    request1 = new XMLHttpRequest();
+    request1.responseType = 'arraybuffer';
+
+    //request1.open('GET', 'sound/guitar.mp3', true);
+    request1.open('GET', 'sound/g.mp3', true);
+
+    request1.onload = function() {
+        audioCtx2.decodeAudioData(
+            request1.response,
+            function(_data) {
+                data2 = _data;
+            },
+            function(e) {
+            }
+        );
+    };
+    request1.send();
+///////////////////////
+audioCtx3 = new(window.webkitAudioContext || window.AudioContext)();
+vol3 = audioCtx3.createGain();
+
+    request2 = new XMLHttpRequest();
+    request2.responseType = 'arraybuffer';
+
+    //request2.open('GET', 'sound/fagot2.mp3', true);
+    request2.open('GET', 'sound/fue2.mp3', true);
+
+    request2.onload = function() {
+        audioCtx3.decodeAudioData(
+            request2.response,
+            function(_data) {
+                data3 = _data;
+            },
+            function(e) {
+            }
+        );
+    };
+    request2.send();
+
+///////////////////////
+audioCtx4 = new(window.webkitAudioContext || window.AudioContext)();
+vol4 = audioCtx4.createGain();
+
+    request4 = new XMLHttpRequest();
+    request4.responseType = 'arraybuffer';
+    request4.open('GET', 'sound/niko.mp3', true);
+
+    request4.onload = function() {
+        audioCtx4.decodeAudioData(
+            request4.response,
+            function(_data) {
+                data4 = _data;
+            },
+            function(e) {
+
+            }
+        );
+    };
+    request4.send();
+
 /// 音楽再生　/////////////////////////////////////////////////////////////////////////////////////////////////
 function sound02(){
 
