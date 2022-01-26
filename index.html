@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://physics7.starfree.jp/phy/sound/oto3youso-m3/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+
+	<meta http-equiv="”Pragma”" content="”no-cache”">
+<style>
+
+
+* {
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer */
+	-khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+	-webkit-user-select: none; /* Chrome, Safari, and Opera */
+	-webkit-touch-callout: none;  /*Disable Android and iOS callouts*/
+	
+}
+body {
+		margin: 0px 0px 0px;
+		height: 100%;
+  		width: 100%;
+ 		overflow: hidden;
+ 		background-color: #003d3d;
+}
+
+html, body{
+	/* -----ipad はみ出ない------ */
+	overflow: hidden;
+}
+
+button,html, body, li {
+	/* -----ipad ダブルタップ　拡大しない------ */
+	touch-action: manipulation;
+}
+
+#info {
+	text-align: center;
+	position: fixed;
+	bottom: 9vh;     /* vw vh で書く*/
+	left:0;
+	width: 100%;
+	margin:auto; /* iphone */
+}
+
+button{	
+	margin:0 1vw 0 1vw;
+	background-color: #005050;
+	border-style: none;
+	color: white;	
+	font-size: 1em;
+}
+div{
+	font-size: 1.2vw;
+	color:#ffffff;
+}
+
+
+#info2 {
+	text-align: center;
+	position: fixed;
+	bottom: 4vh;     /* vw vh で書く*/
+	left:0;
+	width: 100%;
+	margin:auto; /* iphone */
+}
+
+button2{	
+	margin:0 0.5vw 0 0.5vw;
+	background-color: #005050;
+	border-style: none;
+	color: white;	
+	font-size: 1em;
+}
+div2{
+	font-size: 1.2vw;
+	color:#ffffff;
+}
+
+
+btn0{	
+	margin-left:0vw;
+	margin-right:0vw;
+	background-color: #005050;
+	border-style: none;
+	color: yellow;	
+	font-size: 1.4vw;
+}
+
+
+output{	
+	text-align: right;
+	width: 50px;
+	color: white;	
+	font-size: 1em;
+}
+
+
+
+
+
+
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 0;
+  width: 15vw;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+
+/* //////////////////////////////////////////////////// */
+/* WebKit・Blink向け 溝のスタイル */
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2vh; /* 12px; */
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #cccccc;
+  border-radius: 1.3px;
+  border: 1px solid #010101;
+}
+/* WebKit・Blink向け つまみのスタイル */
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 4vh; /* 36px;*/
+  width:  4vh;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  /* 以下は つまみの縦位置調整 */
+  margin-top: -1vh;  /* -14px (つまみの高さ - トラックの高さ) / 2 。つまみの高さは border を含む */	
+}
+
+/* 何故か上の margin-top 指定が Edge に効いてしまうので、Edge向けに設定をリセット */
+@supports (-ms-ime-align: auto) {
+	input[type=range]::-webkit-slider-thumb {
+		margin-top: 0 !important;
+	}
+}
+
+/* WebKit・Blink向け focus時のスタイル */
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #999999;
+}
+
+
+
+/* ////////////////////////////////////////////////////////// */
+/* Firefox向け 溝のスタイル */
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #cccccc;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+/* Firefox向け つまみのスタイル */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* ////////////////////////////////////////////////////////// */
+/* Edge・IE向け 溝のスタイル */
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+/* Edge・IE向け 溝の色（つまみより左側） */
+input[type=range]::-ms-fill-lower {
+  background: #cccccc;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+/* Edge・IE向け 溝の色（つまみより右側） */
+input[type=range]::-ms-fill-upper {
+  background: #cccccc;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+/* Edge・IE向け つまみのスタイル */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+/* Edge・IE向け focus時の色（つまみより左側） */
+input[type=range]:focus::-ms-fill-lower {
+  background: #999999;
+}
+/* Edge・IE向け focus時の色（つまみより右側） */
+input[type=range]:focus::-ms-fill-upper {
+  background: #999999;
+}
+
+/* Edge・IE向け ポップアップを非表示に */
+input[type=range]::-ms-tooltip {
+  display: none;
+}
+/* ////////////////////////////////////////////////////// */
+
+
+canvas#mycanvas{
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height:100%;
+ 
+	background-color: #000000;
+
+}
+
+
+</style>
+<script>(function(){class RuffleMimeType{constructor(a,b,c){this.type=a,this.description=b,this.suffixes=c}}class RuffleMimeTypeArray{constructor(a){this.__mimetypes=[],this.__named_mimetypes={};for(let b of a)this.install(b)}install(a){let b=this.__mimetypes.length;this.__mimetypes.push(a),this.__named_mimetypes[a.type]=a,this[a.type]=a,this[b]=a}item(a){return this.__mimetypes[a]}namedItem(a){return this.__named_mimetypes[a]}get length(){return this.__mimetypes.length}}class RufflePlugin extends RuffleMimeTypeArray{constructor(a,b,c,d){super(d),this.name=a,this.description=b,this.filename=c}install(a){a.enabledPlugin||(a.enabledPlugin=this),super.install(a)}}class RufflePluginArray{constructor(a){this.__plugins=[],this.__named_plugins={};for(let b of a)this.install(b)}install(a){let b=this.__plugins.length;this.__plugins.push(a),this.__named_plugins[a.name]=a,this[a.name]=a,this[b]=a}item(a){return this.__plugins[a]}namedItem(a){return this.__named_plugins[a]}get length(){return this.__plugins.length}}const FLASH_PLUGIN=new RufflePlugin("Shockwave Flash","Shockwave Flash 32.0 r0","ruffle.js",[new RuffleMimeType("application/futuresplash","Shockwave Flash","spl"),new RuffleMimeType("application/x-shockwave-flash","Shockwave Flash","swf"),new RuffleMimeType("application/x-shockwave-flash2-preview","Shockwave Flash","swf"),new RuffleMimeType("application/vnd.adobe.flash-movie","Shockwave Flash","swf")]);function install_plugin(a){navigator.plugins.install||Object.defineProperty(navigator,"plugins",{value:new RufflePluginArray(navigator.plugins),writable:!1}),navigator.plugins.install(a),0<a.length&&!navigator.mimeTypes.install&&Object.defineProperty(navigator,"mimeTypes",{value:new RuffleMimeTypeArray(navigator.mimeTypes),writable:!1});for(var b=0;b<a.length;b+=1)navigator.mimeTypes.install(a[b])}install_plugin(FLASH_PLUGIN);})();</script><script src="chrome-extension://ljgpeaijdiaciejehabbnamhbiaieddh/dist/ruffle.js?uniqueMessageSuffix=72605295021"></script></head>
+
+
+
+
+<body class="vsc-initialized">
+<div id="info">
+	<button onclick="wave1()">正弦波</button>
+	<button onclick="wave2()">矩形波</button>
+	<button onclick="wave3()">効果音1</button>
+	<button onclick="wave4()">効果音2</button>
+</div>
+
+
+
+<div id="info2">
+
+
+2021年度 授業用（長倉作成）<a href = "http://physics7.starfree.jp/phy/"> [引用元]</a>
+
+
+	<button2 onclick="hakei()">波　形</button2>
+	&nbsp;&nbsp;
+	<btn0>音量</btn0><input id="vol" type="range" value="0.5" min="0" max="1.0" step="0.01" oninput="changeVol()">
+	<output id="volVal">0.50</output>
+
+	&nbsp;&nbsp;
+	<btn0>振動数</btn0><input id="freq" type="range" value="220" min="10" max="600" step="1" oninput="changeFreq()">
+	<output id="freqVal">0220</output>〔Hz〕　
+
+</div>
+
+
+<canvas id="mycanvas" width="1827" height="977"></canvas>
+
+<script src="./index_files/jsfscreen.js"></script>
+
+<script src="./index_files/main.js"></script>
+
+
+
+
+</body></html>
